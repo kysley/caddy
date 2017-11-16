@@ -7,14 +7,12 @@ import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
-import { combineReducers, createStore, compose, applyMiddleware } from 'redux'
+import { combineReducers, createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 
-import loginReducer from '../reducers/login'
-import registerReducer from '../reducers/register'
-import userReducer from '../reducers/user'
-
-import Home from './Home'
+import questionReducer from '../reducers/question'
+import voteReducer from '../reducers/vote'
+import CreateFormContainer from '../containers/CreateFormContainer'
 
 const serviceId = 'cj9ofx6pp04w40118pm5rri53'
 
@@ -42,9 +40,8 @@ const client = new ApolloClient({
 })
 
 const reducers = combineReducers({
-  login: loginReducer,
-  register: registerReducer,
-  user: userReducer,
+  question: questionReducer,
+  vote: voteReducer,
 })
 
 const store = createStore(
@@ -59,7 +56,7 @@ class App extends React.Component { // eslint-disable-line
         <Provider store={store}>
           <Router>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={CreateFormContainer} />
             </Switch>
           </Router>
         </Provider>
