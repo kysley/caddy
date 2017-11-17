@@ -5,7 +5,7 @@ type Question @model {
 	id: ID! @isUnique
 	title: String!
 	createdAt: DateTime!
-	quickId: String
+	quickId: String! @isUnique
 	voteYes: [VoteYes!]! @relation(name: "QuestionVoteYes")
 	voteNo: [VoteNo!]! @relation(name: "QuestionVoteNo")
 }
