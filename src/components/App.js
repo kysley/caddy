@@ -13,6 +13,7 @@ import { Provider } from 'react-redux'
 import questionReducer from '../reducers/question'
 import voteReducer from '../reducers/vote'
 import CreateFormContainer from '../containers/CreateFormContainer'
+import ShowQuestionContainer from '../containers/ShowQuestionContainer'
 
 const serviceId = 'cj9ofx6pp04w40118pm5rri53'
 
@@ -57,6 +58,7 @@ class App extends React.Component { // eslint-disable-line
           <Router>
             <Switch>
               <Route exact path="/" component={CreateFormContainer} />
+              <Route exact path="/q/:id" component={ShowQuestionContainer} />
             </Switch>
           </Router>
         </Provider>
