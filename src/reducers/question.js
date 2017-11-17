@@ -5,6 +5,7 @@ import {
   LOAD_QUESTION_REQUEST,
   LOAD_QUESTION_SUCCESS,
   LOAD_QUESTION_FAILURE,
+  GET_SUBMITTED_VOTE,
 } from '../actions/question'
 
 const initialState = {
@@ -14,6 +15,8 @@ const initialState = {
   pollId: null,
   quickId: null,
   title: null,
+  hasVoted: null,
+  voteType: null,
 }
 
 export default (state = initialState, { type, ...payload }) => {
@@ -55,6 +58,12 @@ export default (state = initialState, { type, ...payload }) => {
         ...state,
         loading: false,
         errorMessage: payload.message,
+      }
+    case GET_SUBMITTED_VOTE:
+      return {
+        ...state,
+        hasVoted: payload.ls,
+        voteType: payload.opt,
       }
     default:
       return state
