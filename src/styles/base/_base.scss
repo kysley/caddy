@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $white;
+  color: $black;
+  font-family: T;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: .02rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  transition: .2s all ease-in-out;
+
+  span {
+    display: block;
+  }
+}
+
+.logo {
+  height: 3.25em;
+}
+
+.header {
+  margin-left: 20vw;
+  display: inline-block;
+  padding-top: 2rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fixed {
+  position: fixed;
+}

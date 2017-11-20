@@ -1,0 +1,22 @@
+.banner {
+  lost-align: center;
+  flex-direction: column;
+  margin-top: 15vh;
+}
+
+.banner--primary {
+  font-family: TB;
+  font-size: 3rem;
+  display: block;
+  color: $off-black;
+}
+
+.banner--secondary {
+  font-family: T;
+  font-weight: 300;
+  font-size: 2rem;
+  color: $grey;
+  .issy--span {
+    color: #B721FF;
+  }
+}

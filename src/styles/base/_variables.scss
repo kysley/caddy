@@ -1,0 +1,22 @@
+@font-face {
+  font-family: TB;
+  src: url("../fonts/Theinhardt-Bold.woff");
+}
+
+@font-face {
+  font-family: T;
+  src: url("../fonts/Theinhardt-Regular.woff");
+}
+
+$red: #F25757;
+$green: #5EFFC4;
+$purple: #635EFF;
+$blue: #78E3FD;
+$white: #FFFFFF;
+$black: #000000;
+$off-black: #2D2D2D;
+$grey: #A2A2A2;
+
+@custom-media --mobile (width < 900px);
+@custom-media --mid (901px < width < 1200px);
+@custom-media --desktop-medium (901px < width < 1267px);
