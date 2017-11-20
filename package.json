@@ -15,8 +15,10 @@
     "apollo-link-http": "^1.1.0",
     "apollo-link-ws": "^1.0.0",
     "apollo-utilities": "^1.0.1",
+    "classnames": "^2.2.5",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
+    "lost": "^8.2.0",
     "nanoid": "^1.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
@@ -26,7 +28,8 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
