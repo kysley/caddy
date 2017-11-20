@@ -35,6 +35,7 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractTextPlugin('styles/[name].css'),
     new HtmlWebpackPlugin({
       title: 'tba',
       template: path.join(__dirname, 'src', 'index.ejs'),
