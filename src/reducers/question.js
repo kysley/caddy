@@ -12,11 +12,13 @@ const initialState = {
   loading: false,
   errorMessage: null,
   alertMessage: null,
-  pollId: null,
+  questionId: null,
   quickId: null,
   title: null,
   hasVoted: null,
   voteType: null,
+  votesYes: null,
+  votesNo: null,
 }
 
 export default (state = initialState, { type, ...payload }) => {
@@ -52,6 +54,10 @@ export default (state = initialState, { type, ...payload }) => {
         ...state,
         loading: false,
         successMessage: payload.message,
+        questionId: payload.id,
+        quickId: payload.quickId,
+        votesYes: payload.yesCount,
+        votesNo: payload.noCount,
       }
     case LOAD_QUESTION_FAILURE:
       return {

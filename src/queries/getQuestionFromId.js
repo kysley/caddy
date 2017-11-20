@@ -6,11 +6,11 @@ export default gql`
       title
       quickId
       id
-      _voteNoMeta {
-        count
+      votesNo: _voteNoMeta {
+        noCount: count
       }
-      _voteYesMeta {
-        count
+      votesYes: _voteYesMeta {
+        yesCount: count
       }
     }
   }

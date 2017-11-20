@@ -15,6 +15,8 @@ import voteReducer from '../reducers/vote'
 import CreateFormContainer from '../containers/CreateFormContainer'
 import ShowQuestionContainer from '../containers/ShowQuestionContainer'
 
+import styles from '../styles/app.css' // eslint-disable-line
+
 const serviceId = 'cj9ofx6pp04w40118pm5rri53'
 
 const httpLink = createHttpLink({ uri: `https://api.graph.cool/simple/v1/${serviceId}` })

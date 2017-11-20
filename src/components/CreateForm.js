@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import classNames from 'classnames'
 import gen from 'nanoid/generate'
+
+import Banner from './Banner'
+
 
 export default class CreateForm extends React.Component {
   static propTypes = {
@@ -34,8 +37,17 @@ export default class CreateForm extends React.Component {
 
   render() {
     const { title } = this.state
+    const wrapperClasses = classNames({
+      container: true,
+      full: true,
+      'dur-3': true,
+      fadeOut: this.state.transitionOut,
+    })
     return (
       <div>
+      <Banner />
+      <div className={wrapperClasses}>
+        <div className="col-12-of-12 fadeInUp">
         <input
           className="create--input"
           value={this.state.title}
@@ -60,6 +72,8 @@ export default class CreateForm extends React.Component {
         failure: {this.props.errorMessage} <br />
         { this.props.loading &&
           'its loading' } <br />
+          </div>
+      </div>
       </div>
     )
   }

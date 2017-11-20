@@ -29,9 +29,16 @@ export const loadQuestionRequest = () => ({
   type: LOAD_QUESTION_REQUEST,
 })
 
-export const loadQuestionSuccess = () => ({
+export const loadQuestionSuccess = ({
+  title, id, quickId, votesYes: { yesCount } = {}, votesNo: { noCount } = {},
+}) => ({
   type: LOAD_QUESTION_SUCCESS,
   message: 'Question loaded successfully',
+  id,
+  quickId,
+  title,
+  yesCount,
+  noCount,
 })
 
 export const loadQuestionFailure = () => ({

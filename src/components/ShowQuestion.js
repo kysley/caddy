@@ -25,8 +25,8 @@ export default class ShowQuestion extends React.Component {
     hasVoted: null,
     voteType: 'yes',
   }
-  componentWillMount() {
-    this.getDataFromUrl()
+  componentDidMount() {
+    // this.getDataFromUrl()
   }
 
   getDataFromUrl = () => {
@@ -39,7 +39,16 @@ export default class ShowQuestion extends React.Component {
 
   render() {
     return (
-      <div>hello</div>
+      <div>
+        <button
+          onClick={(event) => {
+          event.preventDefault()
+          return this.props.questionFromId({ id: 'cja4d3x0b7pjs0144cx9by6f2' })
+        }}
+        >
+          {'ello'}
+        </button>
+      </div>
     )
   }
 }

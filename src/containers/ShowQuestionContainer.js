@@ -7,14 +7,6 @@ import { hasSubmittedVote, loadQuestionRequest, loadQuestionSuccess, loadQuestio
 import { createVoteYes, createVoteNo } from '../mutations'
 import { getQuestionFromId, getQuestionFromQuickId } from '../queries'
 
-// const withMutation = graphql(createQuestion, {
-//   props: ({ mutate }) => ({
-//     createQuestion: (title, quickId) => mutate({
-//       variables: { title, qId: quickId },
-//     }),
-//   }),
-// })
-
 const AllFunctions = compose(
   graphql(createVoteYes, {
     props: ({ mutate }) => ({
@@ -31,15 +23,17 @@ const AllFunctions = compose(
     }),
   }),
   graphql(getQuestionFromId, {
-    options: id => ({
-      variables: { id },
+    options: ownProps => ({
+      variables: { id: ownProps.match.params },
     }),
+    name: 'getQuestionFromId',
   }),
-  graphql(getQuestionFromQuickId, {
-    options: quickId => ({
-      variables: { quickId },
-    }),
-  }),
+  // graphql(getQuestionFromQuickId, {
+  //   options: quickId => ({
+  //     variables: { quickId },
+  //   }),
+  //   name: 'getQuestionFromQuickId',
+  // }),
 )
 
 const mapStateToProps = state => ({ ...state.question, ...state.vote })
@@ -68,9 +62,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   questionFromId({ id }) {
     dispatch(loadQuestionRequest())
-    ownProps.getQuestionFromId(id)
-      .then(() => {
-        dispatch(loadQuestionSuccess())
+    ownProps.getQuestionFromId.refetch({ id })
+      .then((res) => {
+        dispatch(loadQuestionSuccess(res.data.Question))
       }).catch(() => dispatch(loadQuestionFailure()))
   },
 })
