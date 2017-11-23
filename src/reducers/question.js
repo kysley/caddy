@@ -12,6 +12,7 @@ const initialState = {
   loading: false,
   errorMessage: null,
   alertMessage: null,
+  showContinueModal: false,
   questionId: null,
   quickId: null,
   title: null,
@@ -33,7 +34,8 @@ export default (state = initialState, { type, ...payload }) => {
       return {
         ...state,
         loading: false,
-        pollId: payload.id,
+        showContinueModal: true,
+        questionId: payload.id,
         quickId: payload.quickId,
         successMessage: payload.message,
       }
