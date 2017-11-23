@@ -66,9 +66,6 @@ export default class CreateForm extends React.Component {
     return (
       <div className={wrapperClasses}>
         <Banner />
-        { showContinueModal &&
-          <ContinueModal />
-        }
         <div className="fadeInUp question--wrapper delay-3">
           <input
             className="question--input"
@@ -91,6 +88,9 @@ export default class CreateForm extends React.Component {
             Ask!
           </button>
         </div>
+        { showContinueModal &&
+          <ContinueModal />
+        }
       </div>
     )
   }

@@ -26,12 +26,12 @@ const ContinueModal = (props) => {
       <div className="continue--modal__wrapper">
         <h1 className="continue--modal__header">Your question is ready to be shared with whoever!</h1>
         <h2><a href={composedUrl} className="continue--modal__link">Click here to view your question!</a></h2>
-        <h2>Also, here is a sharing code you can share with your friends!</h2>
+        <h2>Also, here is a sharing code for your friends!</h2>
         <div className="continue--modal__quick-wrapper">
           <p className="continue--modal__quick-link">{props.quickId}</p>
           <p className="continue--modal__quick-link__copy">COPY</p>
         </div>
-        <h2>They can visit <span>issy.fun/q/&lt;your share code&gt; </span>
+        <h2>They can visit <span>{'issy.fun/q/<your share code>'}<br /></span>
           or click 'Have a sharing code?' at the top of the page!
         </h2>
       </div>
