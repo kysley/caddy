@@ -1,21 +1,21 @@
 .continue--modal {
   position: absolute;
-  z-index: 5;
   lost-align: center;
   width: 100vw;
   height: 100vh;
+  left: 0;
 }
 
 .continue--modal__wrapper {
-  width: 30vw;
-  // height: 30vw;
+  width: 50vw;
+  z-index: 5;
   padding: 2em;
   background: $smoke;
   color: $grey;
   lost-align: center;
   justify-content: initial !important;
   flex-direction: column;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,.07);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .07);
   text-align: center;
   h2 {
     font-weight: 300;
@@ -24,6 +24,12 @@
     background: rgba($pale, .5);
     color: $white;
     padding: 0 .3em 0 0.3em;
+  }
+  @media (--mobile) {
+    width: 80vw;
+  }
+  @media (--mid) {
+    width: 60vw;
   }
 }
 

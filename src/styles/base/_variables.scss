@@ -17,6 +17,6 @@ $blue: #7A89C2;
 $pink: #94778B;
 $pale: #DFAEB4;
 
-@custom-media --mobile (width < 900px);
+@custom-media --mobile (width < 901px);
 @custom-media --mid (901px < width < 1200px);
 @custom-media --desktop-medium (901px < width < 1267px);

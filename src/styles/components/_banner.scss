@@ -1,8 +1,13 @@
 .banner {
   lost-align: center;
   flex-direction: column;
-  // margin-top: 10vh;
-  lost-column: 1/2 2;
+  lost-column: 1/2 1;
+  @media (--mobile) {
+    lost-column: 1/1;
+  }
+  @media (--mid) {
+    lost-column: 1/1;
+  }
 }
 
 .banner--primary {
