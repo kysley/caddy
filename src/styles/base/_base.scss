@@ -5,7 +5,7 @@
 }
 
 body {
-  background: $white;
+  // background: $white;
   color: $black;
   font-family: T;
   font-size: 1rem;
@@ -14,6 +14,7 @@ body {
   letter-spacing: .02rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: $smoke;
 }
 
 a {
@@ -25,6 +26,10 @@ a {
   span {
     display: block;
   }
+}
+
+.no-overflow {
+  overflow: hidden;
 }
 
 .logo {

@@ -4,3 +4,5 @@
 @import 'base/grid';
 
 @import 'components/banner';
+@import 'components/createform';
+@import 'components/continuemodal';

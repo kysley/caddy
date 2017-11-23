@@ -1,7 +1,8 @@
 .banner {
   lost-align: center;
   flex-direction: column;
-  margin-top: 15vh;
+  // margin-top: 10vh;
+  lost-column: 1/2 2;
 }
 
 .banner--primary {
@@ -16,7 +17,16 @@
   font-weight: 300;
   font-size: 2rem;
   color: $grey;
+  max-width: 60%;
   .issy--span {
-    color: #B721FF;
+    color: $blue;
   }
+}
+
+.banner--disclaimer {
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 2em;
+  color: rgba($pink, 0.5);
+  font-size: 1rem;
 }

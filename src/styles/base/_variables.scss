@@ -8,14 +8,14 @@
   src: url("../fonts/Theinhardt-Regular.woff");
 }
 
-$red: #F25757;
-$green: #5EFFC4;
-$purple: #635EFF;
-$blue: #78E3FD;
 $white: #FFFFFF;
 $black: #000000;
-$off-black: #2D2D2D;
-$grey: #A2A2A2;
+$off-black: #3A3335;
+$grey: #808080;
+$smoke: #F6F4EF;
+$blue: #7A89C2;
+$pink: #94778B;
+$pale: #DFAEB4;
 
 @custom-media --mobile (width < 900px);
 @custom-media --mid (901px < width < 1200px);
