@@ -56,7 +56,7 @@ export default {
     }),
     new BabiliPlugin({}),
     new HtmlWebpackPlugin({
-      title: 'tba',
+      title: 'issy, yes/no made easy',
       template: path.join(__dirname, 'src', 'index.ejs'),
       // favicon: path.join(__dirname, 'src', 'favicon.ico'),
       meta: [
