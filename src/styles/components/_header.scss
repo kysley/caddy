@@ -1,0 +1,29 @@
+.header {
+  padding-top: 2rem;
+  width: 100%;
+  position: absolute;
+  z-index: 6;
+  & a {
+    lost-column: .8/12;
+    lost-offset: .2/2;
+    position: absolute;
+  }
+}
+
+.sharing__code {
+  lost-offset: 1.18/2;
+  display: inline;
+  position: absolute;
+  border: none;
+  outline: 0;
+  font-size: .9rem;
+  padding: 1em 3em 1em 3em;
+  color: $white;
+  background: $blue;
+  transition: all .2s ease-out;
+  cursor: pointer;
+  // right: 27em;
+  &:hover {
+    transform: translateY(2.5px);
+  }
+}

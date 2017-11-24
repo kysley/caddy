@@ -4,5 +4,7 @@
 @import 'base/grid';
 
 @import 'components/banner';
-@import 'components/createform';
 @import 'components/continuemodal';
+@import 'components/createform';
+@import 'components/header';
+@import 'components/sharingmodal';

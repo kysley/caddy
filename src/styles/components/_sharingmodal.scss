@@ -1,46 +1,29 @@
-.continue--modal {
+.sharing--modal {
   // position: absolute;
   // lost-align: center;
   // width: 100vw;
   // height: 100vh;
   // left: 0;
+  // lost-center: 100% flex;
+  // lost-column: 1/2;
 }
 
-.continue--modal__wrapper {
+.sharing--modal__wrapper {
   position: absolute;
   z-index: 5;
   padding: 2em;
   background: $smoke;
   color: $grey;
   lost-align: center;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%,-50%);
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  width: 40vw;
-  height: 65vh;
+  justify-content: initial !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   flex-direction: column;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .07);
   text-align: center;
-  // width: 50vw;
-  // z-index: 5;
-  // padding: 2em;
-  // background: $smoke;
-  // color: $grey;
-  // lost-align: center;
-  // justify-content: initial !important;
-  // flex-direction: column;
-  // box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .07);
-  // text-align: center;
   h2 {
     font-weight: 300;
-  }
-  span {
-    background: rgba($pale, .5);
-    color: $white;
-    padding: 0 .3em 0 0.3em;
   }
   @media (--mobile) {
     width: 80vw;
@@ -50,7 +33,7 @@
   }
 }
 
-.continue--modal__link {
+.sharing--modal__link {
   display: block;
   text-align: center;
   padding: .5em;
@@ -62,30 +45,37 @@
   transition: all .2s ease-out;
   cursor: pointer;
   &:hover {
-    transform: translate(0, 2.5px);
+    transform: translateY(2.5px);
   }
 }
 
-.continue--modal__quick-wrapper {
-  // width: 50%;s
+.sharing--modal__quick-wrapper {
+  // width: 50%;
   text-align: center;
   margin: 3em 0 3em 0;
 }
 
-.continue--modal__quick-link {
-  margin-top: 2em;
+.sharing--modal__quick-link__input {
   font-size: 2rem;
   display: inline;
+  border: 0;
+  outline: 0;
   padding: .25em;
   color: $white;
+  width: 8em;
   background: $blue;
+  &::placeholder {
+    color: $white;
+  }
 }
 
-.continue--modal__quick-link__copy {
+.sharing--modal__quick-link__go {
   font-size: 2rem;
   display: inline;
   padding: .25em;
   color: $white;
   background: darken($blue, 5%);
   cursor: pointer;
+  border: 0;
+  outline: 0;
 }
