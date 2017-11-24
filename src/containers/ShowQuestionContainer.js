@@ -28,12 +28,12 @@ const AllFunctions = compose(
     }),
     name: 'getQuestionFromId',
   }),
-  // graphql(getQuestionFromQuickId, {
-  //   options: quickId => ({
-  //     variables: { quickId },
-  //   }),
-  //   name: 'getQuestionFromQuickId',
-  // }),
+  graphql(getQuestionFromQuickId, {
+    options: quickId => ({
+      variables: { quickId },
+    }),
+    name: 'getQuestionFromQuickId',
+  }),
 )
 
 const mapStateToProps = state => ({ ...state.question, ...state.vote })

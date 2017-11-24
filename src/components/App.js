@@ -12,9 +12,9 @@ import { Provider } from 'react-redux'
 
 import questionReducer from '../reducers/question'
 import voteReducer from '../reducers/vote'
+import HeaderContainer from '../containers/HeaderContainer'
 import CreateFormContainer from '../containers/CreateFormContainer'
 import ShowQuestionContainer from '../containers/ShowQuestionContainer'
-
 import styles from '../styles/app.css' // eslint-disable-line
 
 const serviceId = 'cj9ofx6pp04w40118pm5rri53'
@@ -58,10 +58,13 @@ class App extends React.Component { // eslint-disable-line
       <ApolloProvider client={client}>
         <Provider store={store}>
           <Router>
-            <Switch>
-              <Route exact path="/" component={CreateFormContainer} />
-              <Route exact path="/q/:id" component={ShowQuestionContainer} />
-            </Switch>
+            <div>
+              <HeaderContainer />
+              <Switch>
+                <Route exact path="/" component={CreateFormContainer} />
+                <Route exact path="/q/:id" component={ShowQuestionContainer} />
+              </Switch>
+            </div>
           </Router>
         </Provider>
       </ApolloProvider>

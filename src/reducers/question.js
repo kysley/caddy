@@ -6,6 +6,9 @@ import {
   LOAD_QUESTION_SUCCESS,
   LOAD_QUESTION_FAILURE,
   GET_SUBMITTED_VOTE,
+  CLOSE_CONTINUE_MODAL,
+  OPEN_SHARING_MODAL,
+  CLOSE_SHARING_MODAL,
 } from '../actions/question'
 
 const initialState = {
@@ -13,6 +16,7 @@ const initialState = {
   errorMessage: null,
   alertMessage: null,
   showContinueModal: false,
+  showShareModal: false,
   questionId: null,
   quickId: null,
   title: null,
@@ -72,6 +76,21 @@ export default (state = initialState, { type, ...payload }) => {
         ...state,
         hasVoted: payload.ls,
         voteType: payload.opt,
+      }
+    case CLOSE_CONTINUE_MODAL:
+      return {
+        ...state,
+        showContinueModal: payload.show,
+      }
+    case OPEN_SHARING_MODAL:
+      return {
+        ...state,
+        showShareModal: payload.show,
+      }
+    case CLOSE_SHARING_MODAL:
+      return {
+        ...state,
+        showShareModal: payload.show,
       }
     default:
       return state

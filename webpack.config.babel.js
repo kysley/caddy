@@ -56,6 +56,7 @@ export default {
     ],
     alias: {
       components: path.join(__dirname, 'src/components'),
+      containers: path.join(__dirname, 'src/containers'),
     },
   },
   module: {

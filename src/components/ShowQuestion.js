@@ -10,11 +10,12 @@ export default class ShowQuestion extends React.Component {
     // hasVoted: PropTypes.bool.isRequired,
     // voteType: PropTypes.string,
     questionFromId: PropTypes.func.isRequired,
+    questionFromQuickId: PropTypes.func.isRequired,
     onSubmitVoteYes: PropTypes.func.isRequired,
     onSubmitVoteNo: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.obj,
-    }),
+    }).isRequired,
   }
 
   static defaultProps = {
@@ -34,7 +35,11 @@ export default class ShowQuestion extends React.Component {
     const { voteType } = this.state
     // this.props.onSubmitVoteYes({ id, voteType })
     // this.props.onSubmitVoteNo({ id, voteType })
-    this.props.questionFromId({ id })
+    if (id.length > 5) {
+      this.props.questionFromId({ id })
+    } else {
+      this.props.questionFromQuickId({ id })
+    }
   }
 
   render() {

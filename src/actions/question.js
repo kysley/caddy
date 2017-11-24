@@ -8,6 +8,11 @@ export const LOAD_QUESTION_FAILURE = 'LOAD_QUESTION_FAILURE'
 
 export const GET_SUBMITTED_VOTE = 'GET_SUBMITTED_VOTE'
 
+export const CLOSE_CONTINUE_MODAL = 'CLOSE_CONTINUE_MODAL'
+
+export const OPEN_SHARING_MODAL = 'OPEN_SHARING_MODAL'
+export const CLOSE_SHARING_MODAL = 'CLOSE_SHARING_MODAL'
+
 export const submitQuestionRequest = ({ title }) => ({
   type: SUBMIT_NEW_QUESTION,
   title,
@@ -60,3 +65,18 @@ export const hasSubmittedVote = ({ id }) => {
     voteType: opt,
   }
 }
+
+export const closeContinueModal = () => ({
+  type: CLOSE_CONTINUE_MODAL,
+  show: false,
+})
+
+export const openSharingModal = () => ({
+  type: OPEN_SHARING_MODAL,
+  show: true,
+})
+
+export const closeSharingModal = () => ({
+  type: OPEN_SHARING_MODAL,
+  show: false,
+})

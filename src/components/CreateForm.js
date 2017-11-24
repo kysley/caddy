@@ -3,22 +3,23 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import gen from 'nanoid/generate'
 
+import SharingModal from '../containers/SharingModalContainer'
+import ContinueModal from '../containers/ContinueModalContainer'
+
 import Banner from './Banner'
-import ContinueModal from './ContinueModal'
 
 
 export default class CreateForm extends React.Component {
   static propTypes = {
-    title: PropTypes.string,
     loading: PropTypes.bool.isRequired,
     showContinueModal: PropTypes.bool.isRequired,
+    showShareModal: PropTypes.bool.isRequired,
     successMessage: PropTypes.string,
     errorMessage: PropTypes.string,
     onSubmit: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
-    title: '',
     successMessage: '',
     errorMessage: '',
   }
@@ -55,7 +56,7 @@ export default class CreateForm extends React.Component {
 
   render() {
     const { title } = this.state
-    const { showContinueModal } = this.props
+    const { showContinueModal, showShareModal } = this.props
     const wrapperClasses = classNames({
       container: true,
       full: true,
@@ -90,6 +91,9 @@ export default class CreateForm extends React.Component {
         </div>
         { showContinueModal &&
           <ContinueModal />
+        }
+        { showShareModal &&
+          <SharingModal />
         }
       </div>
     )
