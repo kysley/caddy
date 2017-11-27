@@ -12,6 +12,7 @@ class SharingModal extends React.Component {
 
   state = {
     code: '',
+    validLength: false,
   }
 
   handleCodeChange = (e) => {
@@ -21,6 +22,11 @@ class SharingModal extends React.Component {
       this.setState({ code: '' })
     } else {
       this.setState({ code: eTitle })
+    }
+    if (trimmedTitle.length === 5) {
+      this.setState({ validLength: true })
+    } else {
+      this.setState({ validLength: false })
     }
   }
 
@@ -35,9 +41,13 @@ class SharingModal extends React.Component {
       fadeIn: this.props.showShareModal !== false,
       fadeOut: this.props.showShareModal === false,
     })
+    const buttonClasses = classNames({
+      'sharing--modal__quick-link__go': true,
+      valid: this.state.validLength,
+    })
     return (
       <div className={classes}>
-        <h1 className="sharing--modal__header">Hey! Enter a sharing code below to go to the question
+        <h1 className="sharing--modal__header">Enter the sharing code below
           <span role="img" aria-label="stars-emoji"> ✨</span>
         </h1>
         <div className="sharing--modal__quick-wrapper">
@@ -45,10 +55,10 @@ class SharingModal extends React.Component {
             className="sharing--modal__quick-link__input"
             value={this.state.code}
             placeholder="Your code here"
-            autoFocus
             onChange={e => this.handleCodeChange(e)}
           />
-          <button className="sharing--modal__quick-link__go">GO</button>
+          <span className="bar" />
+          <button className={buttonClasses}>View Question</button>
         </div>
       </div>
     )

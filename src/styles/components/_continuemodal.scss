@@ -38,7 +38,7 @@
     font-weight: 300;
   }
   span {
-    background: rgba($pale, .5);
+    background: rgba($purple, .5);
     color: $white;
     padding: 0 .3em 0 0.3em;
   }
@@ -48,6 +48,11 @@
   @media (--mid) {
     width: 60vw;
   }
+}
+
+.continue--modal__header {
+  font-family: TB;
+  color: $off-black;
 }
 
 .continue--modal__link {

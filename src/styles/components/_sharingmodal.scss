@@ -33,20 +33,10 @@
   }
 }
 
-.sharing--modal__link {
-  display: block;
-  text-align: center;
-  padding: .5em;
-  margin: 2em 0 2em 0;
-  font-size: 1.5rem;
+.sharing--modal__header {
   font-family: TB;
-  background: $blue;
-  color: $white;
-  transition: all .2s ease-out;
-  cursor: pointer;
-  &:hover {
-    transform: translateY(2.5px);
-  }
+  color: $off-black;
+  margin-top: 1em;
 }
 
 .sharing--modal__quick-wrapper {
@@ -56,26 +46,59 @@
 }
 
 .sharing--modal__quick-link__input {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: inline;
   border: 0;
   outline: 0;
-  padding: .25em;
-  color: $white;
+  padding: .25em .25em .25em 0;
+  color: $off-black;
   width: 8em;
-  background: $blue;
-  &::placeholder {
-    color: $white;
+  background: $white;
+  border-bottom: 2px solid #CCCCCC;
+  &:focus ~ .bar:before {
+    width: 100%;
+  }
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 12.25em;
+  &:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: $blue;
+    transition: .3s ease-out all;
+    left: 0%;
   }
 }
 
 .sharing--modal__quick-link__go {
-  font-size: 2rem;
+  font-size: 1rem;
   display: inline;
-  padding: .25em;
+  padding: 1em 3em;
   color: $white;
-  background: darken($blue, 5%);
+  background: #CCCCCC;
   cursor: pointer;
   border: 0;
   outline: 0;
+  margin-top: 2em;
+  border-radius: 8px;
+  transition: box-shadow .3s cubic-bezier(.3, .11, .56, .79), background .3s cubic-bezier(.3, .11, .56, .79);
+  box-shadow: 0 11px 66px -13px #CCCCCC;
+  cursor: no-drop;
+  &:hover {
+    box-shadow: 0px 11px 66px -7px #CCCCCC;
+  }
+  &.valid {
+    cursor: pointer;
+    background: $blue;
+    box-shadow: 0 11px 66px -13px $blue;
+    &:hover {
+      box-shadow: 0px 11px 66px -7px $blue;
+    }
+  }
 }

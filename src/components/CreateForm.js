@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import gen from 'nanoid/generate'
 
 import SharingModal from '../containers/SharingModalContainer'
-import ContinueModal from '../containers/ContinueModalContainer'
+import ContinueModal from '../components/ContinueModal'
 
 import Banner from './Banner'
 

@@ -12,10 +12,13 @@ $white: #FFFFFF;
 $black: #000000;
 $off-black: #3A3335;
 $grey: #808080;
-$smoke: #F6F4EF;
-$blue: #7A89C2;
-$pink: #94778B;
-$pale: #DFAEB4;
+$smoke: #FFFFFF;
+$blue: #2176FF;
+$pink: #EDAFB8;
+$purple: #6969B3;
+$red: #FF715B;
+$green: #A2FAA3;
+
 
 @custom-media --mobile (width < 901px);
 @custom-media --mid (901px < width < 1200px);

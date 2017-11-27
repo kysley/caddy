@@ -26,7 +26,7 @@
   margin-left: auto;
   margin-right: auto;
   transition: all .25s ease-in-out;
-  background: darken($smoke, 1.5%);
+  background: darken($smoke, 0.5%);
   color: $off-black;
   &:hover {
     box-shadow: 0px 13px 20px 0px rgba(0, 0, 0, .1);
@@ -36,14 +36,16 @@
 .question--submit {
   border: none;
   outline: 0;
-  font-size: .9rem;
+  font-size: 1rem;
   padding: 1em 3em 1em 3em;
   color: $white;
-  background: $pale;
+  background: $pink;
   margin: 4em auto 2em;
-  transition: all .2s ease-out;
+  transition: box-shadow .3s cubic-bezier(.3, .11, .56, .79);
   cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 11px 66px -13px $pink;
   &:hover {
-    transform: translateY(2.5px);
+    box-shadow: 0px 11px 66px -7px $pink;
   }
 }
