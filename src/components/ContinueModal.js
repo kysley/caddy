@@ -1,7 +1,18 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import onClickOutside from 'react-onclickoutside'
+
+import { closeContinueModal } from '../actions/question'
+
+const mapStateToProps = state => ({ ...state.question })
+
+const mapDispatchToProps = dispatch => ({
+  closeContinueModal() {
+    dispatch(closeContinueModal())
+  },
+})
 
 class ContinueModal extends React.Component {
   static propTypes = {
@@ -40,4 +51,5 @@ class ContinueModal extends React.Component {
   }
 }
 
-export default onClickOutside(ContinueModal)
+// export default onClickOutside(ContinueModal)
+export default connect(mapStateToProps, mapDispatchToProps)(onClickOutside(ContinueModal))
