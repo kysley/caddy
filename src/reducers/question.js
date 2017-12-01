@@ -64,6 +64,7 @@ export default (state = initialState, { type, ...payload }) => {
         quickId: payload.quickId,
         votesYes: payload.yesCount,
         votesNo: payload.noCount,
+        title: payload.title,
       }
     case LOAD_QUESTION_FAILURE:
       return {

@@ -36,7 +36,7 @@ const AllFunctions = compose(
   }),
 )
 
-const mapStateToProps = state => ({ ...state.question, ...state.vote })
+const mapStateToProps = state => ({ ...state.question })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onSubmitVoteYes({ id, voteType }) {

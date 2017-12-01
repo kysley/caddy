@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 
 export default class ShowQuestion extends React.Component {
   static propTypes = {
-    // title: PropTypes.string.isRequired,
-    // id: PropTypes.string.isRequired,
-    // quickId: PropTypes.string.isRequired,
-    // loading: PropTypes.bool.isRequired,
-    // hasVoted: PropTypes.bool.isRequired,
-    // voteType: PropTypes.string,
+    title: PropTypes.string,
+    quickId: PropTypes.string,
+    questionId: PropTypes.string,
+    loading: PropTypes.bool.isRequired,
+    hasVoted: PropTypes.bool,
+    voteType: PropTypes.string,
+    yesCount: PropTypes.int,
+    noCount: PropTypes.int,
     questionFromId: PropTypes.func.isRequired,
     questionFromQuickId: PropTypes.func.isRequired,
     onSubmitVoteYes: PropTypes.func.isRequired,
@@ -19,15 +21,20 @@ export default class ShowQuestion extends React.Component {
   }
 
   static defaultProps = {
+    yesCount: null,
+    noCount: null,
     voteType: null,
+    title: '',
+    quickId: '',
+    questionId: '',
+    hasVoted: null,
   }
 
   state = {
-    hasVoted: null,
     voteType: 'yes',
   }
   componentDidMount() {
-    // this.getDataFromUrl()
+    this.getDataFromUrl()
   }
 
   getDataFromUrl = () => {
@@ -43,15 +50,29 @@ export default class ShowQuestion extends React.Component {
   }
 
   render() {
+    const { questionId } = this.props
     return (
-      <div>
+      <div className="temp">
+        <h1> {this.props.yesCount} </h1>
+        <h1> {this.props.noCount} </h1>
+        <h1> {this.props.title} </h1>
+        <h1> {this.props.questionId} </h1>
+        <h1> {this.props.quickId} </h1>
         <button
           onClick={(event) => {
           event.preventDefault()
-          return this.props.questionFromId({ id: 'cja4d3x0b7pjs0144cx9by6f2' })
+          return this.props.createVoteYes(questionId)
         }}
         >
-          {'ello'}
+          {'vote yes'}
+        </button>
+        <button
+          onClick={(event) => {
+          event.preventDefault()
+          return this.props.createVoteNo(questionId)
+        }}
+        >
+          {'vote no'}
         </button>
       </div>
     )
