@@ -6,20 +6,33 @@ type Question @model {
 	title: String!
 	createdAt: DateTime!
 	quickId: String! @isUnique
-	voteYes: [VoteYes!]! @relation(name: "QuestionVoteYes")
-	voteNo: [VoteNo!]! @relation(name: "QuestionVoteNo")
+	# voteYes: [VoteYes!]! @relation(name: "QuestionVoteYes")
+	# voteNo: [VoteNo!]! @relation(name: "QuestionVoteNo")
+	votes: [Vote!]! @relation(name: "QuestionVotes")
 }
 
-type VoteYes @model {
+# type VoteYes @model {
+# 	id: ID! @isUnique
+# 	createdAt: DateTime!
+# 	question: Question @relation(name: "QuestionVoteYes")
+# }
+
+# type VoteNo @model {
+# 	id: ID! @isUnique
+# 	createdAt: DateTime!
+# 	question: Question @relation(name: "QuestionVoteNo")
+# }
+
+type Vote @model {
 	id: ID! @isUnique
 	createdAt: DateTime!
-	question: Question @relation(name: "QuestionVoteYes")
+	question: Question @relation(name: "QuestionVotes")
+	type: VoteType!
 }
 
-type VoteNo @model {
-	id: ID! @isUnique
-	createdAt: DateTime!
-	question: Question @relation(name: "QuestionVoteNo")
+enum VoteType {
+	YES
+	NO
 }
   # Uncomment below - you can declare relations between models like this
 

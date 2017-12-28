@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import gql from 'graphql-tag'
 
 export default class ShowQuestion extends React.Component {
   static propTypes = {
@@ -35,6 +36,13 @@ export default class ShowQuestion extends React.Component {
   }
   componentDidMount() {
     this.getDataFromUrl()
+    this.createVoteSubscription = this.props.getQuestionFromId.subscribeToMore({
+      document: gql`
+        subscription watchVotes {
+
+        }
+      `,
+    })
   }
 
   getDataFromUrl = () => {
